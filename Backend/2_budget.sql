@@ -1,20 +1,20 @@
 /*###########################################################
-# Name	: budget											#
-# Type	: table												#
-# Usage	: Used to store budgets created by users			#
-#															#
+# Name  : budget                                            #
+# Type  : table                                             #
+# Usage : Used to store budgets created by users            #
+#                                                           #
 /############################################################*/
 --
 CREATE TABLE [dbo].[budget](
-	[ID_budget] [int] IDENTITY(1,1) NOT NULL,
-	[ID_user] [int] NOT NULL,
-	[start_date] [date] NOT NULL,
-	[end_date] [date] NOT NULL,
-	[amount] [float] NOT NULL,
-	[balance] [float] NOT NULL,
+    [ID_budget] [int] IDENTITY(1,1) NOT NULL,
+    [ID_user] [int] NOT NULL,
+    [start_date] [date] NOT NULL,
+    [end_date] [date] NOT NULL,
+    [amount] [float] NOT NULL,
+    [balance] [float] NOT NULL,
  CONSTRAINT [PK_budget] PRIMARY KEY CLUSTERED 
 (
-	[ID_budget] ASC
+    [ID_budget] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 )
 

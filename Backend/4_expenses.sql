@@ -1,24 +1,24 @@
 /*###########################################################
-# Name	: expenses											#
-# Type	: table												#
-# Usage	: Used to store expenses created by user, amount	#
-#		  required to cover expense and amount applied to   #
-#		  the expense to date								#
-#															#
+# Name  : expenses                                          #
+# Type  : table                                             #
+# Usage : Used to store expenses created by user, amount    #
+#         required to cover expense and amount applied to   #
+#         the expense to date                               #
+#                                                           #
 /############################################################*/
 --
 CREATE TABLE [dbo].[expenses](
-	[ID_expense] [int] IDENTITY(1,1) NOT NULL,
-	[ID_expense_type] [int] NOT NULL,
-	[ID_user] [int] NOT NULL,
-	[expense_desc] [varchar](255) NULL,
-	[expense_date] [date] NOT NULL,
-	[reccuring_flag] [varchar](1) NOT NULL,
-	[amount_original] [float] NOT NULL,
-	[amount_applied] [float] NULL,
+    [ID_expense] [int] IDENTITY(1,1) NOT NULL,
+    [ID_expense_type] [int] NOT NULL,
+    [ID_user] [int] NOT NULL,
+    [expense_desc] [varchar](255) NULL,
+    [expense_date] [date] NOT NULL,
+    [reccuring_flag] [varchar](1) NOT NULL,
+    [amount_original] [float] NOT NULL,
+    [amount_applied] [float] NULL,
  CONSTRAINT [PK_expenses] PRIMARY KEY CLUSTERED 
 (
-	[ID_expense] ASC
+    [ID_expense] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 )
 
