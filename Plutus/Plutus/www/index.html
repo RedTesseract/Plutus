@@ -1,28 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <!--
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link href="css/base/jquery-ui.min.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Plutus</title>
-    </head>
-    <body>
-        <div class="app">
-            <p id="deviceready" class="event">Connecting to Device</p>
-            <div id="progressbar"></div>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="../Content/semantic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script src="../Scripts/semantic.js"></script>
+    <title>Plutus</title>
+</head>
+<body>
+    <div class="app">
+
+        <div id="navigacija" class="navigation">
+            <div class="ui fluid one item menu">
+                <a class="item" id="sidebarBtn">
+                    <i class="sidebar icon"></i>
+                    Menu
+                </a>
+            </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script src="scripts/jquery-3.2.1.min.js"></script>
-        <script src="scripts/jquery-ui-1.12.1.min.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+
+        <div class="sadrzaj">
+
+            <div class="ui top demo vertical inverted sidebar labeled icon menu">
+                <a class="active item" id="navHome">
+                    <i class="home icon"></i>
+                    Home
+                </a>
+                <a class="item" id="navBudget">
+                    <i class="calculator icon"></i>
+                    Budget
+                </a>
+                <a class="item" id="navExpenses">
+                    <i class="money icon"></i>
+                    Expenses
+                </a>
+                <a class="item" id="navSettings">
+                    <i class="settings icon"></i>
+                    Settings
+                </a>
+                <a class="item" id="navHelp">
+                    <i class="help icon"></i>
+                    Help
+                </a>
+                <a class="item" id="navSignout">
+                    <i class="sign out icon"></i>
+                    Sign Out
+                </a>
+            </div>
+
+            <div id="syncDiv" style="padding-bottom: 25px;">
+                <div class="ui compact message">
+                    <i class="notched circle loading icon"></i>
+                    <p>Syncing</p>
+                </div>
+            </div>
+
+            <div id="home">
+                <h3 class="ui center aligned icon header">
+                    <i class="calendar icon"></i>
+                    4.1.2018.
+                </h3>
+
+                <div class="ui small statistic">
+                    <div class="label">
+                        Predicted Amount
+                    </div>
+                    <div class="value">
+                        40,509 HRK
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="ui small statistic">
+                    <div class="label">
+                        Current Amount
+                    </div>
+                    <div class="value">
+                        15,870 HRK
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/database.js"></script>
+    <script type="text/javascript" src="scripts/sync.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script src="../bower_components/juliusjs/js/julius.js"></script>
+</body>
 </html>

@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="css/ui/semantic.css" rel="stylesheet" />
+    <script src="scripts/base/jquery-3.2.1.js"></script>
+    <script src="scripts/base/semantic.js"></script>
+    <title>Plutus</title>
+</head>
+<body>
+<div class="login">
+    
+    <div id="logoDiv">
+        <img class="logo" src="images/gold.png" />
+        <h1>PLUTUS</h1>
+    </div>
+
+    <br/>
+    <div id="deviceready">
+
+        <div id="loadingDiv" style="display: none">
+            <div class="ui huge text active centered inline loader">Logging in</div>
+            <p></p>
+        </div>
+
+        <div class="ui warning message" id="errorLoginDiv" style="display: none">
+            <div class="header">
+                Login failed!
+            </div>
+            Please try again
+        </div>
+
+        <div class="ui warning message" id="errorNetworkDiv" style="display: none">
+            No network connection
+        </div>
+
+        <div class="ui form" id="loginForm" style="display: none">
+            <div id="onlineForm">
+                <div class="field">
+                    <label>Username</label>
+                    <input name="username" id="username" placeholder="Username" type="text">
+                </div>
+            </div>
+
+            <div id="offlineForm" style="display: none">
+                <div class="field">
+                    <label>Local Users</label>
+
+                    <div class="ui compact menu">
+                        <div class="ui simple dropdown item">
+                            <div id="selectedUser">- Select Local User -</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu" id="localUsersList">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ui hidden divider"></div>
+
+            <div class="field">
+                <label>Password</label>
+                <input name="password" id="password" placeholder="Password" type="password">
+            </div>
+
+            <div class="ui hidden divider"></div>
+
+            <div id="btnOfflineDiv" style="display: none">
+                <div class="fluid ui vertical large buttons">
+                    <button class="fluid ui primary button" id="loginOfflineBtn">Offline Login</button>
+                    <button class="fluid ui positive button" id="btnOfflineBack">Back</button>
+                </div>
+            </div>
+
+            <div id="btnDiv">
+                <div class="fluid ui vertical large buttons">
+                    <button class="fluid ui primary button" id="loginBtn">Login</button>
+                    <button class="fluid ui positive button" id="registerFormBtn">Sign Up</button>
+                </div>
+
+                <div class="ui hidden divider"></div>
+
+                <div class="ui large buttons">
+                    <button class="ui facebook button">
+                        <i class="facebook icon"></i>
+                    </button>
+                    <div class="or"></div>
+                    <button class="ui google plus button">
+                        <i class="google plus icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui form" id="registerForm" style="display: none">
+            
+            <div class="ui segments">
+                    <div class="ui segment blue progress" data-percent="0" id="regProgress">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                <div class="ui horizontal segments">
+                    <div class="ui blue inverted segment" id="regStep1">
+                        <p>Login</p>
+                    </div>
+                    <div class="ui blue inverted segment" id="regStep2" style="display: none;">
+                        <p>Personal</p>
+                    </div>
+                    <div class="ui blue inverted segment" id="regStep3" style="display: none;">
+                        <p>Settings</p>
+                    </div>
+                    <div class="ui blue inverted segment" id="regStep4" style="display: none;">
+                        <p>Confirmation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="regFormContent" style="height: 300px;">
+                <div id="regSeg1">
+                    <div class="field">
+                        <label>Username</label>
+                        <input name="username" id="regUsername" placeholder="Username" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label>Password</label>
+                        <input name="password" id="regPassword" placeholder="Password" type="password">
+                    </div>
+
+                    <div class="field">
+                        <label>Confirm Password</label>
+                        <input name="password" id="regPasswordConfirm" placeholder="Confirm Password" type="password">
+                    </div>
+
+                    <div class="ui hidden divider"></div>
+                </div>
+
+                <div id="regSeg2" style="display: none">
+                    <div class="grouped fields" style="text-align: center;">
+                        <label>Gender</label>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input name="gender" checked="" tabindex="0" class="hidden" type="radio">
+                                <label>Male</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input name="gender" tabindex="0" class="hidden" type="radio">
+                                <label>Female</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <input name="gender" tabindex="0" class="hidden" type="radio">
+                                <label>Would not say</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Age</label>
+                        <input name="age" id="regAge" placeholder="Age" type="number">
+                    </div>
+
+                    <div class="field">
+                        <label>Profession</label>
+                        <input name="profession" id="regProfession" placeholder="Profession" type="text">
+                    </div>
+
+                    <div class="ui hidden divider"></div>
+                </div>
+
+                <div id="regSeg3" style="display: none">
+                    <div class="field">
+                        <label>Currency</label>
+                        <input name="currency" id="regCurrency" placeholder="Currency" type="text">
+                    </div>
+
+                    <div class="field" style="visibility: hidden;">
+                        <label>Hidden</label>
+                        <input name="hiddenInput" type="text">
+                    </div>
+
+                    <div class="ui hidden divider"></div>
+                </div>
+
+                <div id="regSeg4" style="display: none">
+                    <div class="ui hidden divider"></div>
+
+                    <div class="ui huge text active centered inline loader">Signing Up</div>
+                    <p></p>
+
+                    <div class="ui hidden divider"></div>
+                </div>
+
+                <div id="regSegError" style="display: none">
+                    <div class="ui hidden divider"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>Error!</p>
+                    <div class="ui hidden divider"></div>
+                    <div class="ui hidden divider"></div>
+                </div>
+            </div>
+
+                <div class="ui purple inverted segment" id="regNext1">
+                    Next
+                </div>
+
+                <div class="ui purple inverted segment" id="regNext2" style="display: none">
+                    Next
+                </div>
+
+                <div class="ui purple inverted segment" id="regNext3" style="display: none">
+                    Sign Up
+                </div>
+                
+                <div class="ui teal inverted segment" id="regBack">
+                    Back
+                </div>
+
+                <div class="ui blue inverted segment" id="regBackLogin" style="display: none">
+                    Back to Login
+                </div>
+            
+        </div>
+
+    </div>
+</div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/database.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
+</body>
+</html>

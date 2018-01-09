@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="../Content/semantic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script src="../Scripts/semantic.js"></script>
+    <title>Plutus</title>
+</head>
+<body>
+    <div class="app">
+
+        <div id="navigacija" class="navigation">
+            <div class="ui fluid one item menu">
+                <a class="item" id="sidebarBtn">
+                    <i class="sidebar icon"></i>
+                    Menu
+                </a>
+            </div>
+        </div>
+
+        <div class="sadrzaj">
+
+            <div class="ui top demo vertical inverted sidebar labeled icon menu">
+                <a class="item" id="navHome">
+                    <i class="home icon"></i>
+                    Home
+                </a>
+                <a class="active item" id="navBudget">
+                    <i class="calculator icon"></i>
+                    Budget
+                </a>
+                <a class="item" id="navExpenses">
+                    <i class="money icon"></i>
+                    Expenses
+                </a>
+                <a class="item" id="navSettings">
+                    <i class="settings icon"></i>
+                    Settings
+                </a>
+                <a class="item" id="navHelp">
+                    <i class="help icon"></i>
+                    Help
+                </a>
+                <a class="item" id="navSignout">
+                    <i class="sign out icon"></i>
+                    Sign Out
+                </a>
+            </div>
+
+            <div id="budget">
+                <h1>Budget</h1>
+
+                <button class="ui huge icon button" id="refreshBtn">
+                    <i class="refresh icon"></i>
+                </button>
+
+                <button class="ui fluid button" id="addBtn">
+                    Add new
+                </button>
+
+                <div id="budgetDisplay">
+                    <div id="budgetRow1" style="display:none">
+                        <br />
+                        <h4 class="ui horizontal divider header">
+                            <i class="calendar chart icon"></i>
+                            Hrana (14.11. - 16.11.)
+                        </h4>
+                        <table class="ui unstackable celled two column table">
+                            <thead>
+                                <tr>
+                                    <th>Balance</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>500 HRK</td>
+                                    <td>1000 HRK</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="budgetRow2" style="display:none">
+                        <br />
+                        <h4 class="ui horizontal divider header">
+                            <i class="calendar chart icon"></i>
+                            Droge (22.12. - 28.12.)
+                        </h4>
+                        <table class="ui unstackable celled two column table">
+                            <thead>
+                                <tr>
+                                    <th>Balance</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6666 HRK</td>
+                                    <td>12000 HRK</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="budgetAdd" class="ui form" style="display: none">
+                    <div class="inline field">
+                        <label>Description</label>
+                        <input name="description" id="description" placeholder="Description" type="text">
+                    </div>
+
+                    <div class="inline field">
+                        <label>Amount</label>
+                        <input name="amount" id="amount" placeholder="Amount" type="text">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/budget.js"></script>
+    <script src="../bower_components/juliusjs/js/julius.js"></script>
+</body>
+</html>

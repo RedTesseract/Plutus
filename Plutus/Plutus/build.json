@@ -1,11 +1,11 @@
 {
      "android": {
-         "release": {
-             "keystore": "",
-             "storePassword": "",
-             "alias": "",
-             "password" : "",
-             "keystoreType": ""
-         }
+      "release": {
+        "keystore": "C:\\Users\\svenvu\\Desktop\\key\\plutus-release-key.keystore",
+        "storePassword": "novac123",
+        "alias": "REDTESSERACT",
+        "password": "novac123",
+        "keystoreType": ""
+      }
      }
  }
