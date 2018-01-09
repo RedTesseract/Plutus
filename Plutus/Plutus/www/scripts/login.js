@@ -64,6 +64,10 @@
             $("#errorNetworkDiv").hide();
         });
 
+        $("#errorRegDiv").click(function () {
+            $("#errorRegDiv").hide();
+        });
+
         $("#registerFormBtn").click(function () {
             $("#errorLoginDiv").hide();
             $("#logoDiv").transition('fly down');
@@ -74,21 +78,37 @@
         });
 
         $("#regNext1").click(function () {
-            $('#regProgress').progress({ percent: 33 });
+            var username = $('#regUsername').val();
+            var password = $('#regPassword').val();
+            var passwordConfirm = $('#regPasswordConfirm').val();
 
-            $("#regNext1").hide();
-            $("#regNext2").show();
+            if (!username || !password || !passwordConfirm) {
+                $("#errorRegText").text("Please fill all data!");
+                $("#errorRegDiv").transition('pulse');
+            } else {
+                $("#errorRegDiv").hide();
+                if (password !== passwordConfirm) {
+                    $("#errorRegText").text("Password doesn't match!");
+                    $("#errorRegDiv").transition('pulse');
+                } else {
+                    $('#regProgress').progress({ percent: 33 });
 
-            $("#regSeg1").fadeOut(250, function () {
-                $("#regSeg2").fadeIn(250);
-            });
+                    $("#regNext1").hide();
+                    $("#regNext2").show();
 
-            $("#regStep1").transition('pulse');
-            $("#regStep1").hide();
-            $("#regStep2").transition('pulse');
+                    $("#regSeg1").fadeOut(250, function () {
+                        $("#regSeg2").fadeIn(250);
+                    });
+
+                    $("#regStep1").transition('pulse');
+                    $("#regStep1").hide();
+                    $("#regStep2").transition('pulse');
+                }
+            }
         });
 
         $("#regNext2").click(function () {
+            $("#errorRegDiv").hide();
             $('#regProgress').progress({ percent: 66 });
 
             $("#regNext2").hide();

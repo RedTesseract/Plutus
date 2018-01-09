@@ -114,16 +114,16 @@
                     </div>
                 <div class="ui horizontal segments">
                     <div class="ui blue inverted segment" id="regStep1">
-                        <p>Login</p>
+                        <p>Login (1/4)</p>
                     </div>
                     <div class="ui blue inverted segment" id="regStep2" style="display: none;">
-                        <p>Personal</p>
+                        <p>Personal (2/4)</p>
                     </div>
                     <div class="ui blue inverted segment" id="regStep3" style="display: none;">
-                        <p>Settings</p>
+                        <p>Settings - (3/4)</p>
                     </div>
                     <div class="ui blue inverted segment" id="regStep4" style="display: none;">
-                        <p>Confirmation</p>
+                        <p>Confirmation (4/4)</p>
                     </div>
                 </div>
             </div>
@@ -206,13 +206,11 @@
 
                     <div class="ui hidden divider"></div>
                 </div>
-
-                <div id="regSegError" style="display: none">
-                    <div class="ui hidden divider"></div>
-                    <div class="ui hidden divider"></div>
-                    <p>Error!</p>
-                    <div class="ui hidden divider"></div>
-                    <div class="ui hidden divider"></div>
+                
+                <div class="ui warning message" id="errorRegDiv" style="display: none">
+                    <div class="header" id="errorRegText">
+                        Error
+                    </div>
                 </div>
             </div>
 
